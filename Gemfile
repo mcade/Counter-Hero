@@ -8,6 +8,9 @@ group :development, :test do
   gem 'sqlite3', '1.3.8'
 end
 
+gem 'font-awesome-sass'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

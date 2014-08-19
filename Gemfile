@@ -12,6 +12,8 @@ gem 'font-awesome-sass'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+gem "figaro"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

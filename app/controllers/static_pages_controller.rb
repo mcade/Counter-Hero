@@ -1,12 +1,6 @@
 class StaticPagesController < ApplicationController
   require 'net/http'
   def home
-    #@counterinfo = counterinfos.build
-    url = URI.parse("https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?match_id=841615883&key=#{ENV['STEAM_WEB_API_KEY']}")
-    #url = URI.parse("https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key=#{ENV['STEAM_WEB_API_KEY']}&matches_requested=1")
-  	#url = URI.parse("https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?matches_requested=1&key=#{ENV['STEAM_WEB_API_KEY']}&account_id=76561198033974572")
-    res = Net::HTTP::get(url)
-    @matchlist = JSON.load(res)['result']['players']
 
   end
 

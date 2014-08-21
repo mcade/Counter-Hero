@@ -102,14 +102,4 @@ class StaticPagesController < ApplicationController
 
   end
 
-   private
-    # Use callbacks to share common setup or constraints between actions.
-    #def set_thing
-    #  @thing = Thing.find(params[:id])
-    #end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def counterinfo_params
-      params.require(:counterinfo).permit(:content)
-    end
 end

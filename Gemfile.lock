@@ -45,6 +45,8 @@ GEM
       rails (>= 3, < 5)
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
+    highcharts-rails (3.0.10)
+      railties (>= 3.1)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (1.5.3)
@@ -127,6 +129,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   figaro
   font-awesome-sass
+  highcharts-rails (~> 3.0.0)
   jbuilder (~> 1.2)
   jquery-rails
   pg (= 0.15.1)

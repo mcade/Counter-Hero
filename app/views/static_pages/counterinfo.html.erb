@@ -1,2 +1,188 @@
 
-<%= @matchesarray %>
+<div id="chartcontainer" style="width:100%; height:625px;"></div>
+<script>
+	$(function () { 
+    $('#chartcontainer').highcharts({
+                chart: {
+            zoomType: 'xy',
+            marginTop: 67
+        },
+        title: {
+            text: "Most Recent Match"
+        },
+        xAxis: [{
+            categories: ['<%= @namesarray[0] %>', '<%= @namesarray[1] %>', '<%= @namesarray[2] %>', '<%= @namesarray[3] %>', '<%= @namesarray[4] %>', '<%= @namesarray[5] %>',
+                '<%= @namesarray[6] %>', '<%= @namesarray[7] %>', '<%= @namesarray[8] %>', '<%= @namesarray[9] %>'],
+        labels: {
+            style: {
+                    textAlign: 'center'
+                },
+            formatter: function() {
+                return {
+                    '<%= @namesarray[0] %>': '<%= @wlarray[0] %></br><%= image_tag "#{@heroidarray[0]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[0] %></span></br>' + this.value,
+                    '<%= @namesarray[1] %>': '<%= @wlarray[1] %></br><%= image_tag "#{@heroidarray[1]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[1] %></span></br>' + this.value,
+                    '<%= @namesarray[2] %>': '<%= @wlarray[2] %></br><%= image_tag "#{@heroidarray[2]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[2] %></span></br>' + this.value,
+                    '<%= @namesarray[3] %>': '<%= @wlarray[3] %></br><%= image_tag "#{@heroidarray[3]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[3] %></span></br>' + this.value,
+                    '<%= @namesarray[4] %>': '<%= @wlarray[4] %></br><%= image_tag "#{@heroidarray[4]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[4] %></span></br>' + this.value,
+                    '<%= @namesarray[5] %>': '<%= @wlarray[5] %></br><%= image_tag "#{@heroidarray[5]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[5] %></span></br>' + this.value,
+                    '<%= @namesarray[6] %>': '<%= @wlarray[6] %></br><%= image_tag "#{@heroidarray[6]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[6] %></span></br>' + this.value,
+                    '<%= @namesarray[7] %>': '<%= @wlarray[7] %></br><%= image_tag "#{@heroidarray[7]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[7] %></span></br>' + this.value,
+                    '<%= @namesarray[8] %>': '<%= @wlarray[8] %></br><%= image_tag "#{@heroidarray[8]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[8] %></span></br>' + this.value,
+                    '<%= @namesarray[9] %>': '<%= @wlarray[9] %></br><%= image_tag "#{@heroidarray[9]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[9] %></span></br>' + this.value
+                }[this.value];
+
+                
+                
+            },
+            useHTML: true
+        }
+        }],
+        yAxis: [{ // Primary yAxis
+            min : 0,
+            labels: {
+                format: '{value} hp',
+                style: {
+                    color: Highcharts.getOptions().colors[2]
+                }
+            },
+            title: {
+                text: 'Damage Dealt',
+                style: {
+                    color: Highcharts.getOptions().colors[2]
+                }
+            },
+            opposite: true,
+
+        }, { // Secondary yAxis
+            gridLineWidth: 0,
+            title: {
+                text: 'Gold Per Minute',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            labels: {
+                format: '{value} gpm',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            }
+
+        }, { // Tertiary yAxis
+            gridLineWidth: 0,
+            min : 0,
+            allowDecimals: false,
+            title: {
+                text: 'Kill and Deaths',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            labels: {
+                format: '{value}',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            align: 'center',
+            verticalAlign: 'top',
+            floating: true,
+            x: 0,
+            y: 26,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [{
+            name: 'GPM',
+            type: 'column',
+            data: <%= @gpmarray %>,
+            yAxis: 1,
+            tooltip: {
+                valueSuffix: ' gpm'
+            }
+
+        }, {
+            name: 'Total dmg',
+            type: 'spline',
+            data: <%= @totaldmgarray %>,
+            color: 'rgba(253,232,97,0.9)',
+            lineWidth: 0,
+            marker: {
+                radius: 7,
+                symbol: 'circle'
+            },
+            dashStyle: 'shortdot',
+            tooltip: {
+                valueSuffix: ' hp'
+            }
+
+        }, {
+            name: 'Tower dmg',
+            type: 'spline',
+            visible: false,
+            data: <%= @towerdmgarray %>,
+            color: '#8bbc21',
+            marker: {
+                enabled: false,
+                radius: 0,
+            },
+            dashStyle: 'shortdot',
+            tooltip: {
+                valueSuffix: ' hp'
+            }
+
+        }, {
+            name: 'Hero dmg',
+            type: 'spline',
+            visible: false,
+            color: '#8bbc21',
+            data: <%= @herodmgarray %>,
+            marker: {
+                enabled: false,
+                radius: 0,
+                symbol: 'circle'
+            },
+            tooltip: {
+                valueSuffix: ' hp'
+            }
+        }, {
+            name: 'Kills',
+            type: 'line',
+            yAxis: 2,
+            data: <%= @killsarray %>,
+            lineWidth : 0,
+            color: 'rgb(0,166,80)',
+            marker : {
+                enabled : true,
+                radius : 8,
+                symbol: "triangle",
+            },
+            tooltip: {
+                valueSuffix: ''
+            }
+
+        }, {
+            name: 'Deaths',
+            type: 'line',
+            visible: false,
+            yAxis: 2,
+            data: <%= @deathsarray %>,
+            lineWidth : 0,
+            color: '#565656',
+            marker : {
+                enabled : true,
+                radius : 6,
+                symbol: "triangle-down",
+            },
+            tooltip: {
+                valueSuffix: ''
+            }
+        }]
+    });
+});
+</script>

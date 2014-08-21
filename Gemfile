@@ -12,6 +12,8 @@ gem 'font-awesome-sass'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+gem "highcharts-rails", "~> 3.0.0"
+
 gem "figaro"
 
 # Use SCSS for stylesheets

@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-  	@counterinfo = Counterinfo.new
     #@counterinfo = counterinfos.build
     url = URI.parse("https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?match_id=841615883&key=#{ENV['STEAM_WEB_API_KEY']}")
     #url = URI.parse("https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key=#{ENV['STEAM_WEB_API_KEY']}&matches_requested=1")

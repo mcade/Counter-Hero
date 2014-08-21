@@ -2,9 +2,8 @@ Counterhero::Application.routes.draw do
 
   root  'static_pages#home'
   match '/faq',    to: 'static_pages#faq',    via: 'get'
-  resources :counterinfos, only: [:create]
 
-  post 'home', to: 'static_pages#counterinfo'
+  match 'counter', to: 'static_pages#counterinfo', via: 'post'
 
   
   # The priority is based upon order of creation: first created -> highest priority.

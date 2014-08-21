@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
   require 'net/http'
   def home
-
   end
 
   def faq
@@ -73,7 +72,7 @@ class StaticPagesController < ApplicationController
         end
         
 
-        
+        sleep 1.0
       else
         @namesarray << 'anon'
         @matchesarray << 0
@@ -89,6 +88,16 @@ class StaticPagesController < ApplicationController
       end
       @totaldmgarray = [@herodmgarray,@towerdmgarray].transpose.map {|x| x.reduce(:+)}
     end
+    puts @namesarray
+    puts @gpmarray
+    puts @deathsarray
+    puts @killsarray
+    puts @assistsarray
+    puts @herodmgarray
+    puts @towerdmgarray
+    puts @heroidarray
+    puts @levelarray
+    puts @wlarray
 
   end
 

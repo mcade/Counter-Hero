@@ -11,7 +11,6 @@ class StaticPagesController < ApplicationController
     @matchesarray = []
     @namesarray = []
     @gpmarray = []
-    @marray = ['Apple', 'Banana', 'Orange']
 
     @killsarray = []
     @deathsarray = []

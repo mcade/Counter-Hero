@@ -1,6 +1,57 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@font-face{
+    font-family: 'Fira Sans';
+    src: font-url('FiraSans-Hair.eot');
+    src: local('Fira Sans Hair'),
+         font-url('FiraSans-Hair.eot') format('embedded-opentype'),
+         font-url('FiraSans-Hair.woff') format('woff'),
+         font-url('FiraSans-Hair.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Fira Sans';
+    src: font-url('FiraSans-UltraLight.eot');
+    src: local('Fira Sans UltraLight'),
+         font-url('FiraSans-UltraLight.eot') format('embedded-opentype'),
+         font-url('FiraSans-UltraLight.woff') format('woff'),
+         font-url('FiraSans-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Fira Sans';
+    src: font-url('FiraSans-Light.eot');
+    src: local('Fira Sans Light'),
+         font-url('FiraSans-Light.eot') format('embedded-opentype'),
+         font-url('FiraSans-Light.woff') format('woff'),
+         font-url('FiraSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Fira Sans';
+    src: font-url('FiraSans-Regular.eot');
+    src: local('Fira Sans Regular'),
+         font-url('FiraSans-Regular.eot') format('embedded-opentype'),
+         font-url('FiraSans-Regular.woff') format('woff'),
+         font-url('FiraSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Fira Sans';
+    src: font-url('FiraSans-Bold.eot');
+    src: local('Fira Sans Bold'),
+         font-url('FiraSans-Bold.eot') format('embedded-opentype'),
+         font-url('FiraSans-Bold.woff') format('woff'),
+         font-url('FiraSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 /* footer */
 
 footer {
@@ -33,22 +84,24 @@ footer ul li {
 }
 
 /* header */
-.navcolored {
-  background-color: #DD2222;
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
 }
-
-.navbar-default .navbar-brand {
-  color: white;
-  &:hover {
-    color: white;
-  }
-}
-
-
 
 .alignmid {
   width: 960px;
   text-align: center;
+}
+
+.alignmid h3 {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 200;
+}
+
+.alignmid h3 span {
+  font-weight: 300;
+  color: rgb(90,90,90);
 }
 
 .navbar {
@@ -56,11 +109,40 @@ footer ul li {
   min-height: 20px;
 }
 
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+
 .navbar-brand {
+  color: black;
   padding: 0 15px;
   height: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  border-radius: 25px 0;
+  background-color: ghostwhite;
+  float: none;
 }
+
 
 #chartcontainer {
   margin-top: -3px;
+}
+
+.resource h2, .resource form {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 200;
+}
+
+.resource {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+#testdata {
+  padding-top: 0;
 }

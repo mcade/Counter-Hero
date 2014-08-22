@@ -16,4 +16,8 @@
 //= require bootstrap-sprockets
 //= require highcharts
 //= require highcharts/highcharts-more
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .
+
+ NProgress.configure({ trickleRate: 0.05, trickleSpeed: 800 });

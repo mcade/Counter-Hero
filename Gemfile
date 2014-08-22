@@ -14,6 +14,8 @@ gem 'autoprefixer-rails'
 
 gem "highcharts-rails", "~> 3.0.0"
 
+gem 'nprogress-rails'
+
 gem "figaro"
 
 # Use SCSS for stylesheets

@@ -8,7 +8,7 @@
             marginTop: 67
         },
         title: {
-            text: "Most Recent Match"
+            text: "Recent Match Stats for Current Lobby"
         },
         xAxis: [{
             categories: ['<%= @namesarray[0] %>', '<%= @namesarray[1] %>', '<%= @namesarray[2] %>', '<%= @namesarray[3] %>', '<%= @namesarray[4] %>', '<%= @namesarray[5] %>',
@@ -19,16 +19,16 @@
                 },
             formatter: function() {
                 return {
-                    '<%= @namesarray[0] %>': '<%= @wlarray[0] %></br><%= image_tag "#{@heroidarray[0]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[0] %></span></br>' + this.value,
-                    '<%= @namesarray[1] %>': '<%= @wlarray[1] %></br><%= image_tag "#{@heroidarray[1]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[1] %></span></br>' + this.value,
-                    '<%= @namesarray[2] %>': '<%= @wlarray[2] %></br><%= image_tag "#{@heroidarray[2]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[2] %></span></br>' + this.value,
-                    '<%= @namesarray[3] %>': '<%= @wlarray[3] %></br><%= image_tag "#{@heroidarray[3]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[3] %></span></br>' + this.value,
-                    '<%= @namesarray[4] %>': '<%= @wlarray[4] %></br><%= image_tag "#{@heroidarray[4]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[4] %></span></br>' + this.value,
-                    '<%= @namesarray[5] %>': '<%= @wlarray[5] %></br><%= image_tag "#{@heroidarray[5]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[5] %></span></br>' + this.value,
-                    '<%= @namesarray[6] %>': '<%= @wlarray[6] %></br><%= image_tag "#{@heroidarray[6]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[6] %></span></br>' + this.value,
-                    '<%= @namesarray[7] %>': '<%= @wlarray[7] %></br><%= image_tag "#{@heroidarray[7]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[7] %></span></br>' + this.value,
-                    '<%= @namesarray[8] %>': '<%= @wlarray[8] %></br><%= image_tag "#{@heroidarray[8]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[8] %></span></br>' + this.value,
-                    '<%= @namesarray[9] %>': '<%= @wlarray[9] %></br><%= image_tag "#{@heroidarray[9]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[9] %></span></br>' + this.value
+                    '<%= @namesarray[0] %>': '<%= @wlarray[0] %></br><%= image_tag "#{@heroidarray[0]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[0] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[0] %>" target="_blank"><%= @namesarray[0] %></a>',
+                    '<%= @namesarray[1] %>': '<%= @wlarray[1] %></br><%= image_tag "#{@heroidarray[1]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[1] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[1] %>" target="_blank"><%= @namesarray[1] %></a>',
+                    '<%= @namesarray[2] %>': '<%= @wlarray[2] %></br><%= image_tag "#{@heroidarray[2]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[2] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[2] %>" target="_blank"><%= @namesarray[2] %></a>',
+                    '<%= @namesarray[3] %>': '<%= @wlarray[3] %></br><%= image_tag "#{@heroidarray[3]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[3] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[3] %>" target="_blank"><%= @namesarray[3] %></a>',
+                    '<%= @namesarray[4] %>': '<%= @wlarray[4] %></br><%= image_tag "#{@heroidarray[4]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[4] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[4] %>" target="_blank"><%= @namesarray[4] %></a>',
+                    '<%= @namesarray[5] %>': '<%= @wlarray[5] %></br><%= image_tag "#{@heroidarray[5]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[5] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[5] %>" target="_blank"><%= @namesarray[5] %></a>',
+                    '<%= @namesarray[6] %>': '<%= @wlarray[6] %></br><%= image_tag "#{@heroidarray[6]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[6] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[6] %>" target="_blank"><%= @namesarray[6] %></a>',
+                    '<%= @namesarray[7] %>': '<%= @wlarray[7] %></br><%= image_tag "#{@heroidarray[7]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[7] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[7] %>" target="_blank"><%= @namesarray[7] %></a>',
+                    '<%= @namesarray[8] %>': '<%= @wlarray[8] %></br><%= image_tag "#{@heroidarray[8]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[8] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[8] %>" target="_blank"><%= @namesarray[8] %></a>',
+                    '<%= @namesarray[9] %>': '<%= @wlarray[9] %></br><%= image_tag "#{@heroidarray[9]}.png", :alt => "", :title => "Anti-mage", :style => "vertical-align: middle; width: 59px; height: 33px; margin: 0 auto;" %></br><span style="color: black">level <%= @levelarray[9] %></span></br><a href="http://www.dotabuff.com/players/<%= @idarray[9] %>" target="_blank"><%= @namesarray[9] %></a>'
                 }[this.value];
 
                 
@@ -186,3 +186,40 @@
     });
 });
 </script>
+
+<div class="row" style="margin-top: 25px;">
+  <div class="col-xs-6 col-sm-4 resource">
+    <h2>To use:</h2></br>
+    1. <a href="http://dota2.gamepedia.com/Console" target="_blank">Enable the Dota 2 console</a><br>
+    2. At the players loading screen, open the console (default key is "\")<br>
+    3. Enter the command "dota_debug_lobby"<br>
+    4. Copy and paste output into the text box above</br>
+    <a href="http://imgur.com/gallery/pegE3" target="_blank">Step by Step Imgur Album</a><br>
+
+
+  </div>
+  <div class="col-xs-6 col-sm-4 resource">
+    <h2>To excel:</h2></br>
+    1. <a href="http://dota.org.uk/" target="_blank">Counter</a> stronger players' heroes<br>
+    2. <a href="http://www.dotahut.com/" target="_blank">Synergize</a> with your teammates<br>
+    3. <a href="http://www.reddit.com/r/DotA2/comments/1t8dk2/noobs_60_second_alttab_guide_to_drafting_in_cm/" target="_blank">Pick</a> competently<br>
+    4. <a href="http://www.twitch.tv/sing_sing" target="_blank">Watch Singsing</a>
+  </div>
+  <div class="col-xs-6 col-sm-4 resource">
+    <h2>To support:</h2></br>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+  </div>
+</div>
+<div class="row" style="margin-top: 17px;">
+  <ul>
+    <li>Fetching stats can take up to 20 seconds due to rate limiting requests</li>
+    <li><a href="http://www.dotabuff.com/pages/enabling-statistics" target="_blank">"Expose Public Match Data"</a> setting in the Dota 2 client needs to be enabled to get player info</li>
+  </ul>
+</div>
